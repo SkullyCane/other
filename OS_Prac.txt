@@ -1,7 +1,7 @@
+
 Practical 1 : multithreading
 
-
-******prime number******
+*****************************************************prime number****************************************
 import threading 
 def prime(x,y):
     print("current thread is",threading.current_thread().name)
@@ -24,6 +24,7 @@ t1.join()
 t2.join()
 print("all threads executed!!")
 
+*********************************************************************************************************
 
 practical 2 : RMI
 
@@ -71,7 +72,8 @@ public double getFact(double number){
     } // main function
 }
 
-*******client***********
+*************************************************client**************************************************
+
 import java.rmi.*;
 import java.rmi.registry.*;
 import java.util.Scanner;
@@ -98,6 +100,8 @@ public class FactClient{
 
 }//class closed
 
+
+*********************************************************************************************************
 
 PRAC 3:Write a program to implement Bounded Buffer to solve Producer -
 Consumer without Semaphore
@@ -155,6 +159,7 @@ c.start()
 c.join()
 p.join()
 
+*********************************************************************************************************
 
 PRAC 4: FCFS
 def getwaitingtime(n,bt,at,wt):
@@ -191,6 +196,9 @@ processes=list(map(int,input("enter process Ids seperated by space").split()))
 bursttime=list(map(int,input("enter burst time seperated by space").split())) 
 arrivaltime=list(map(int,input("enter arrival time seperated by space").split())) 
 display(n,processes,bursttime,arrivaltime)
+
+
+*********************************************************************************************************
 
 PRAC5 : SJF
 finallist = []
@@ -243,6 +251,7 @@ process_list = sorted(process_list, key=lambda x: (x[1], x[2]))
 print(process_list)
 getaveragetime(n, process_list)
 
+*********************************************************************************************************
 
 PRAC 6:Write a program to implement Bounded Buffer to solve Producer -
 Consumer with Semaphore.
@@ -307,8 +316,10 @@ p.start()
 c.start()
 p.join()
 c.join()
+
+*********************************************************************************************************
             
-PRAC 7:Write a Python program that implements the banker’s algorithm
+PRAC 7:Write a Python program that implements the bankerâ€™s algorithm
 #banker's algoo
 n=int(input("Enter number of processes"))
 m=int(input("Enter Number of resources"))
@@ -378,6 +389,7 @@ if alldone==True:
     print(f"safe sequence :{Sequence}")   
 else:
     print("System is not safe")     
+
 
 
 
