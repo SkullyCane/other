@@ -1,0 +1,423 @@
+************* MATH ***************************************************************************
+import java.util.Scanner;
+public class Prac1
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Input a: ");
+        double a = sc.nextDouble();
+
+        System.out.println("Input b: ");
+        double b = sc.nextDouble();
+
+        System.out.println("Input c: ");
+        double c = sc.nextDouble();
+
+        double result = b*b-4.0*a*c;
+
+        if (result>0)
+        {
+
+            double r1 = (-b+Math.pow(result,0.5)/(2*a));
+            double r2 = (-b-Math.pow(result,0.5)/(2*a));
+            System.out.println("The roots are "+r1+" and "+r2);
+
+        }
+        else if (result==0)
+        {
+
+            double r3 = -b/(2*a);
+            System.out.println("The roots are "+r3);
+
+        }
+        else
+        {
+            System.out.println("The roots are not equal");
+        }
+
+
+    }
+
+
+}
+
+********** MATRIX *************************************************
+
+import java.util.Scanner;
+public class Pract2
+{
+
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+
+        int row=0,col=0,i,j=0 ;
+
+        
+        System.out.println("Enter number of rows: ");
+        row = sc.nextInt();
+        
+        System.out.println("Enter number of columns: ");
+        col = sc.nextInt();
+
+        int a[][] = new int[row][col];
+        int b[][] = new int[row][col];
+        int res[][] = new int[row][col];
+
+
+        System.out.println("Enter the elements of the First matrix ");
+        
+        for(i=0; i<row;i++)
+        {
+            for(j=0; j<col; j++)
+            {
+                a[i][j] = sc.nextInt();
+                System.out.print(a+"\t");
+            }
+        }
+        for(i=0; i<row;i++)
+        {
+            for(j=0; j<col; j++)
+            {
+        
+            System.out.print(a[i][j]+"\t");
+            }
+        System.out.println();
+    }
+        
+        System.out.println("Enter the elements of the Second matrix ");
+        
+        for(i=0; i<row;i++)
+        {
+            for(j=0; j<col; j++)
+            {
+                b[i][j] = sc.nextInt();
+                System.out.print(b+"\t");
+            }
+            System.out.println(b[i][j]);
+        }
+        
+
+        for(i=0; i<row;i++)
+        {
+            for(j=0; j<col; j++)
+            {
+                res[i][j] = a[i][j]+b[i][j];
+                //System.out.print(res[i][j]+"\t");
+            }
+            System.out.println();
+            System.out.println("Resultant Matrix is \n"+res[i][j]);
+        }
+
+
+    }
+}
+**********GEOMETRY********************************************************************************
+
+// Method Overloading
+import java.util.*;
+import java.math.*;
+
+public class Geometry
+{
+    static Scanner sc = new Scanner(System.in);
+    double pi = 3.14;
+    
+    void area (double r)
+    {
+        double a = pi*r*r;  
+        System.out.println("Area of circle is: "+a);
+    }
+    
+    void area (int s)
+    {
+        int a = s*s;
+        System.out.println("Area of square is: "+a);
+    }
+    
+    void area(int l, int b)
+    {
+        double a = l*b;
+        System.out.println("Area of rectangle is: "+a);
+    }
+
+    public static void main(String[] args)
+    {
+        Geometry g = new Geometry();
+        /*
+        g.sc.nextInt();
+        
+        g.sc.nextInt();
+        
+        g.sc.nextInt();
+        */
+        
+        System.out.print("Enter  of circle(decimal value): ");
+        g.area(sc.nextDouble());
+        System.out.println();
+
+        System.out.print("Enter Side of square: ");
+        g.area(sc.nextInt());
+        System.out.println();
+
+        System.out.println("Enter Length and Breadth of rectangle: ");
+        g.area(sc.nextInt(),sc.nextInt());
+        System.out.println();
+    }
+}
+
+*************Inheritance***************************************************************************
+
+import java.util.*;
+
+class addsub
+{
+    public void add(int a, int b)
+    {
+        int c = a+b;
+        System.out.println("Addition of the given inputs is: "+c);
+    }
+    public void sub(int a, int b)
+    {
+        int c = a-b;
+        System.out.println("Subtraction of the given inputs is: "+c);
+    }
+}
+class muldiv extends addsub
+{
+    public void mul(int a, int b)
+    {
+        int c = a*b;
+        System.out.println("Multiplication of the given inputs is: "+c);
+    }
+    public void div(int a, int b)
+    {
+        float c = a/b;
+        System.out.println("Division of the given inputs is: "+c);
+    }
+}
+
+
+
+
+public class Inheritance
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the first number: ");
+        int a = sc.nextInt();
+        
+        System.out.println("\nEnter the Second number: ");
+        int b = sc.nextInt();
+
+        muldiv md = new muldiv();
+
+        md.add(a, b);
+        md.sub(a, b);
+        md.mul(a, b);
+        md.div(a, b);
+
+
+    }
+}
+
+*************Inheritance***************************************************************************
+
+import java.util.*;
+
+class addsub
+{
+    public void add(int a, int b)
+    {
+        int c = a+b;
+        System.out.println("Addition of the given inputs is: "+c);
+    }
+    public void sub(int a, int b)
+    {
+        int c = a-b;
+        System.out.println("Subtraction of the given inputs is: "+c);
+    }
+}
+class muldiv extends addsub
+{
+    public void mul(int a, int b)
+    {
+        int c = a*b;
+        System.out.println("Multiplication of the given inputs is: "+c);
+    }
+    public void div(int a, int b)
+    {
+        float c = a/b;
+        System.out.println("Division of the given inputs is: "+c);
+    }
+}
+
+
+
+
+public class Inheritance
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the first number: ");
+        int a = sc.nextInt();
+        
+        System.out.println("\nEnter the Second number: ");
+        int b = sc.nextInt();
+
+        muldiv md = new muldiv();
+
+        md.add(a, b);
+        md.sub(a, b);
+        md.mul(a, b);
+        md.div(a, b);
+
+
+    }
+}
+
+*************NAME SORT***************************************************************************
+
+import java.io.*;
+import java.util.*;
+public class NameSort
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the array size: ");
+        int n = sc.nextInt();
+            
+        String name[] = new String[n];
+        System.out.println("Enter the Names: ");
+            
+        for(int i=0;i<n;i++)
+        {
+            name[i]=sc.next();
+        }
+            
+        String temp;
+            
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if(name[i].compareTo(name[j])>0)
+                {
+                    temp = name[i];
+                    name[i] = name[j];
+                    name[j] = temp;
+                }
+            }
+        }
+        System.out.println("The names in alphabetical order are:");
+        
+        for(int i=0;i<n;i++)
+        {
+            System.out.println(name[i]);
+        }
+    }
+}
+
+*************NAME SORT 2***************************************************************************
+
+import java.io.*;
+import java.util.*;
+public class NameSorter
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        int i = 0;
+        int j = 0;
+        System.out.println("Enter size of the Array: ");
+        int n = sc.nextInt();
+
+        int temp;
+        int names[] = new int[n];
+        System.out.println("Enter Numbers : ");
+
+        for(i=0; i<n; i++)
+        {
+            names[i] = sc.nextInt(); 
+        }
+        System.out.println();
+    
+        for(i=0; i<n; i++)
+        {
+            for(j=i+1; j<n; j++)
+            {
+                //if(names[i].compareTo(names[j])>0)
+                if(names[i]>names[j])
+                {
+                    temp = names[i];
+                    names[i] = names[j];
+                    names[j] = temp;
+                                   
+                }
+                for (int k=0;k<4;k++)
+                {
+                
+                   System.out.print(names[k]+ " ");
+                }
+                System.out.println();
+            }
+            
+        }
+
+        System.out.println("The Numbers when arranged in ascending order are: ");
+
+        for(i=0;i<n;i++)
+        {
+            System.out.println(names[i]);
+        }
+
+
+    }
+}
+
+*************INTERFACE***************************************************************************
+
+package Animals;
+public interface Behaviour
+{
+    public void eat();
+    public void type();
+    
+}
+
+
+
+package Interfaces;
+import Animals.*;
+
+public class Buffalo implements Behaviour //class
+{
+    public void eat()   //eat function
+    {
+        System.out.println("Buffalo eat grass.");
+    }
+
+    public void type()  //type of food functions
+    {
+        System.out.println("Buffalo are Herbivorous.");
+    }
+
+    public static void main(String[] args)
+    {
+        Buffalo buff = new Buffalo();
+        buff.eat();
+        buff.type();
+    }
+}
+
+
